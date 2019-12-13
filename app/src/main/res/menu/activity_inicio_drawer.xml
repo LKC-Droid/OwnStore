@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:showIn="navigation_view">
+
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_shops"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/menu_shops" />
+        <item
+            android:id="@+id/nav_myshop"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/menu_mitienda" />
+    </group>
+
+    <item android:title="Cuenta">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="@string/menu_ajustes" />
+            <item
+                android:id="@+id/nav_signout"
+                android:icon="@android:drawable/ic_lock_power_off"
+                android:title="@string/menu_signout" />
+        </menu>
+    </item>
+
+</menu>
