@@ -7,6 +7,55 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/app_bar_inicio">
 
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+        android:layout_width="432dp"
+        android:layout_height="65dp"
+        android:layout_gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="BottomAppBar" />
+
+    <ImageButton
+        android:id="@+id/destacadosButton"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="50dp"
+        android:backgroundTint="#F7F161"
+        android:foregroundTint="#CA2F2F"
+        android:scaleType="centerCrop"
+        android:tint="@color/common_google_signin_btn_text_dark_default"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_whatshot_black_24dp" />
+
+    <ImageButton
+        android:id="@+id/homeButton"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginEnd="50dp"
+        android:backgroundTint="#F7F161"
+        android:foregroundTint="#CA2F2F"
+        android:scaleType="centerCrop"
+        android:tint="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/searchButton"
+        app:srcCompat="@drawable/ic_home_black_24dp" />
+
+    <ImageButton
+        android:id="@+id/searchButton"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginEnd="50dp"
+        android:backgroundTint="#F7F161"
+        android:foregroundTint="#CA2F2F"
+        android:scaleType="centerCrop"
+        android:tint="@color/common_google_signin_btn_text_dark_default"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_search_black_24dp" />
+
     <fragment
         android:id="@+id/nav_host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"

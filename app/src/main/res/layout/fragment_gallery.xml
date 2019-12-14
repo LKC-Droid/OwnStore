@@ -7,12 +7,12 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:label="Inicio"
-        android:layout_width="430dp"
-        android:layout_height="448dp"
+        android:layout_width="526dp"
+        android:layout_height="511dp"
         android:layout_marginTop="16dp"
+        android:label="Inicio"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ejemplo" />

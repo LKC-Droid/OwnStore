@@ -10,8 +10,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import android.view.MenuItem;
 import android.view.View;
@@ -26,8 +24,8 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 import com.lkcdroid.ownstore.ui.Tiendas.TiendasFragment;
-import com.lkcdroid.ownstore.ui.NoModificar.HomeFragment;
 import com.lkcdroid.ownstore.ui.TiendasDestacadas.DestacadasFragment;
+import com.lkcdroid.ownstore.ui.tools.ToolsFragment;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -35,6 +33,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -67,20 +66,53 @@ public class InicioActivity extends AppCompatActivity implements NavigationView.
             goLogIn();
         }
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         View headerView = navigationView.getHeaderView(0);
         TextView textName = (TextView) headerView.findViewById(R.id.textName);
         TextView textEmail = (TextView) headerView.findViewById(R.id.textEmail);
+        final ImageButton homeButton = (ImageButton) findViewById(R.id.homeButton);
+        final ImageButton destacadosbutton = (ImageButton) findViewById(R.id.destacadosButton);
+        final ImageButton search = (ImageButton) findViewById(R.id.searchButton);
+
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FragmentManager fm = getSupportFragmentManager();
+                fm.beginTransaction().setCustomAnimations(R.anim.nav_default_enter_anim, R.anim.nav_default_exit_anim).replace(R.id.nav_host_fragment, new TiendasFragment()).commit();
+                    homeButton.setImageTintList(getResources().getColorStateList(R.color.colorPrimaryDark));
+                    destacadosbutton.setImageTintList(getResources().getColorStateList(R.color.buttons));
+                    search.setImageTintList(getResources().getColorStateList(R.color.buttons));
+            }
+        });
+
+        destacadosbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fm = getSupportFragmentManager();
+                fm.beginTransaction().setCustomAnimations(R.anim.nav_default_enter_anim, R.anim.nav_default_exit_anim).replace(R.id.nav_host_fragment, new DestacadasFragment()).commit();
+                homeButton.setImageTintList(getResources().getColorStateList(R.color.buttons));
+                destacadosbutton.setImageTintList(getResources().getColorStateList(R.color.colorPrimaryDark));
+                search.setImageTintList(getResources().getColorStateList(R.color.buttons));
+            }
+        });
+
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fm = getSupportFragmentManager();
+                abrirBuscador();
+                homeButton.setImageTintList(getResources().getColorStateList(R.color.buttons));
+                destacadosbutton.setImageTintList(getResources().getColorStateList(R.color.buttons));
+            }
+        });
+
+
+
 
 
         textName.setText(acct.getDisplayName());
@@ -105,6 +137,11 @@ public class InicioActivity extends AppCompatActivity implements NavigationView.
 
         FragmentManager fm = getSupportFragmentManager();
         fm.beginTransaction().replace(R.id.nav_host_fragment, new TiendasFragment()).commit();
+    }
+
+    private void abrirBuscador() {
+        Intent intent = new Intent(this, BuscarActivity.class);
+        startActivity(intent);
     }
 
     @Override
@@ -174,4 +211,5 @@ public class InicioActivity extends AppCompatActivity implements NavigationView.
                     }
                 });
     }
+
 }
