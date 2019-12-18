@@ -16,4 +16,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ejemplo" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

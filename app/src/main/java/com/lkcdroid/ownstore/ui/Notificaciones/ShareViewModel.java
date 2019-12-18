@@ -1,4 +1,4 @@
-package com.lkcdroid.ownstore.ui.share;
+package com.lkcdroid.ownstore.ui.Notificaciones;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

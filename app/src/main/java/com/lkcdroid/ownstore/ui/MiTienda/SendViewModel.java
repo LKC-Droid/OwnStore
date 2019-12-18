@@ -1,4 +1,4 @@
-package com.lkcdroid.ownstore.ui.send;
+package com.lkcdroid.ownstore.ui.MiTienda;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

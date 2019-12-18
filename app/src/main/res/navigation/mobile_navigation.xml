@@ -31,13 +31,13 @@
 
     <fragment
         android:id="@+id/nav_share"
-        android:name="com.lkcdroid.ownstore.ui.share.ShareFragment"
+        android:name="com.lkcdroid.ownstore.ui.Notificaciones.ShareFragment"
         android:label="@string/menu_share"
         tools:layout="@layout/fragment_share" />
 
     <fragment
         android:id="@+id/nav_signout"
-        android:name="com.lkcdroid.ownstore.ui.send.SendFragment"
+        android:name="com.lkcdroid.ownstore.ui.MiTienda.SendFragment"
         android:label="@string/menu_send"
         tools:layout="@layout/fragment_send" />
 </navigation>

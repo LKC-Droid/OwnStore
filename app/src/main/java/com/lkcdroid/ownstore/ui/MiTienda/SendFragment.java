@@ -1,4 +1,4 @@
-package com.lkcdroid.ownstore.ui.share;
+package com.lkcdroid.ownstore.ui.MiTienda;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,19 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.lkcdroid.ownstore.R;
 
-public class ShareFragment extends Fragment {
+public class SendFragment extends Fragment {
 
-    private ShareViewModel shareViewModel;
+    private SendViewModel sendViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        shareViewModel =
-                ViewModelProviders.of(this).get(ShareViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_share, container, false);
-        final TextView textView = root.findViewById(R.id.text_share);
-        shareViewModel.getText().observe(this, new Observer<String>() {
+
+        abrirRegistroTienda();
+        sendViewModel =
+                ViewModelProviders.of(this).get(SendViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_send, container, false);
+        final TextView textView = root.findViewById(R.id.text_send);
+        sendViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
@@ -32,4 +34,9 @@ public class ShareFragment extends Fragment {
         });
         return root;
     }
+
+    private void abrirRegistroTienda() {
+    }
+
+
 }

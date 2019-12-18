@@ -12,19 +12,22 @@
         android:theme="@style/AppTheme.AppBarOverlay">
 
 
-
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="center"
             android:background="@color/colorPrimary"
             android:fontFamily="@font/lobster"
+            android:gravity="center"
             android:textAlignment="center"
+            android:textDirection="firstStrong"
             app:popupTheme="@style/AppTheme2"
             app:title="OwnStore"
-            android:layout_gravity="center"
             app:titleMargin="2dp"
-            app:titleTextAppearance="@style/TextAppearance.AppCompat.Large" />
+            app:titleMarginStart="100dp"
+            app:titleTextAppearance="@style/TextAppearance.AppCompat.Large"
+            app:titleTextColor="@color/buttons" />
 
     </com.google.android.material.appbar.AppBarLayout>
 

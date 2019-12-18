@@ -18,10 +18,13 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:backgroundTint="@color/colorPrimary"
         android:fitsSystemWindows="true"
-        android:forceDarkAllowed="false"
+        android:forceDarkAllowed="true"
         android:outlineAmbientShadowColor="#00000000"
         app:headerLayout="@layout/nav_header_inicio"
+        app:itemIconTint="@color/buttons"
+        app:itemTextColor="@color/buttons"
         app:menu="@menu/activity_inicio_drawer" />
 
 

@@ -4,6 +4,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -25,7 +27,7 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.navigation.NavigationView;
 import com.lkcdroid.ownstore.ui.Tiendas.TiendasFragment;
 import com.lkcdroid.ownstore.ui.TiendasDestacadas.DestacadasFragment;
-import com.lkcdroid.ownstore.ui.tools.ToolsFragment;
+import com.lkcdroid.ownstore.ui.Notificaciones.ShareFragment;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -34,13 +36,15 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class InicioActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private AppBarConfiguration mAppBarConfiguration;
     private GoogleSignInClient mGoogleSignInClient;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,11 +62,7 @@ public class InicioActivity extends AppCompatActivity implements NavigationView.
 
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
         if (acct != null) {
-            Toast.makeText(getApplicationContext(),"Funciona", Toast.LENGTH_LONG).show();
-
-
         } else {
-            Toast.makeText(getApplicationContext(),"Ups no funciona :^(", Toast.LENGTH_LONG).show();
             goLogIn();
         }
 
@@ -72,21 +72,33 @@ public class InicioActivity extends AppCompatActivity implements NavigationView.
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         View headerView = navigationView.getHeaderView(0);
-        TextView textName = (TextView) headerView.findViewById(R.id.textName);
-        TextView textEmail = (TextView) headerView.findViewById(R.id.textEmail);
-        final ImageButton homeButton = (ImageButton) findViewById(R.id.homeButton);
-        final ImageButton destacadosbutton = (ImageButton) findViewById(R.id.destacadosButton);
-        final ImageButton search = (ImageButton) findViewById(R.id.searchButton);
+        TextView textName =  headerView.findViewById(R.id.textName);
+        TextView textEmail =  headerView.findViewById(R.id.textEmail);
+        ImageView userPhoto =  headerView.findViewById(R.id.imagProf);
+        final ImageButton homeButton =  findViewById(R.id.homeButton);
+        final ImageButton destacadosbutton =  findViewById(R.id.destacadosButton);
+        final ImageButton search =  findViewById(R.id.searchButton);
+        final ImageButton myShop =  findViewById(R.id.miTiendaButton);
+        final ImageButton notificaciones = findViewById(R.id.notificationsButton);
+
+        Glide.with(this)
+                .load(acct.getPhotoUrl())
+                .apply(RequestOptions.circleCropTransform())
+                .into(userPhoto);
 
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 FragmentManager fm = getSupportFragmentManager();
-                fm.beginTransaction().setCustomAnimations(R.anim.nav_default_enter_anim, R.anim.nav_default_exit_anim).replace(R.id.nav_host_fragment, new TiendasFragment()).commit();
+                fm.beginTransaction()
+                        .setCustomAnimations(R.anim.right_slide, R.anim.left_slide )
+                        .replace(R.id.nav_host_fragment, new TiendasFragment())
+                        .commit();
                     homeButton.setImageTintList(getResources().getColorStateList(R.color.colorPrimaryDark));
                     destacadosbutton.setImageTintList(getResources().getColorStateList(R.color.buttons));
                     search.setImageTintList(getResources().getColorStateList(R.color.buttons));
+                    notificaciones.setImageTintList(getResources().getColorStateList(R.color.buttons));
             }
         });
 
@@ -94,10 +106,11 @@ public class InicioActivity extends AppCompatActivity implements NavigationView.
             @Override
             public void onClick(View v) {
                 FragmentManager fm = getSupportFragmentManager();
-                fm.beginTransaction().setCustomAnimations(R.anim.nav_default_enter_anim, R.anim.nav_default_exit_anim).replace(R.id.nav_host_fragment, new DestacadasFragment()).commit();
+                fm.beginTransaction().setCustomAnimations(R.anim.right_slide, R.anim.left_slide).replace(R.id.nav_host_fragment, new DestacadasFragment()).commit();
                 homeButton.setImageTintList(getResources().getColorStateList(R.color.buttons));
                 destacadosbutton.setImageTintList(getResources().getColorStateList(R.color.colorPrimaryDark));
                 search.setImageTintList(getResources().getColorStateList(R.color.buttons));
+                notificaciones.setImageTintList(getResources().getColorStateList(R.color.buttons));
             }
         });
 
@@ -106,8 +119,23 @@ public class InicioActivity extends AppCompatActivity implements NavigationView.
             public void onClick(View v) {
                 FragmentManager fm = getSupportFragmentManager();
                 abrirBuscador();
-                homeButton.setImageTintList(getResources().getColorStateList(R.color.buttons));
-                destacadosbutton.setImageTintList(getResources().getColorStateList(R.color.buttons));
+            }
+        });
+
+        notificaciones.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                    FragmentManager fm = getSupportFragmentManager();
+                    fm.beginTransaction()
+                            .setCustomAnimations(R.anim.right_slide, R.anim.left_slide)
+                            .replace(R.id.nav_host_fragment, new ShareFragment())
+                            .commit();
+                    homeButton.setImageTintList(getResources().getColorStateList(R.color.buttons));
+                    destacadosbutton.setImageTintList(getResources().getColorStateList(R.color.buttons));
+                    search.setImageTintList(getResources().getColorStateList(R.color.buttons));
+                    notificaciones.setImageTintList(getResources().getColorStateList(R.color.colorPrimaryDark));
+
             }
         });
 
@@ -159,7 +187,9 @@ public class InicioActivity extends AppCompatActivity implements NavigationView.
     }
 
     private void goLogIn() {
+
         Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 
@@ -211,5 +241,6 @@ public class InicioActivity extends AppCompatActivity implements NavigationView.
                     }
                 });
     }
+
 
 }
