@@ -10,87 +10,97 @@
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
         style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
-        android:layout_width="432dp"
-        android:layout_height="65dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_gravity="bottom"
+        android:backgroundTint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
         tools:ignore="BottomAppBar" />
 
     <ImageButton
         android:id="@+id/homeButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginTop="2dp"
         android:layout_marginBottom="2dp"
         android:background="@drawable/boton_circulo"
-        android:backgroundTint="#F7F161"
+        android:backgroundTint="@android:color/holo_orange_light"
         android:foregroundTint="#CA2F2F"
         android:scaleType="centerInside"
         android:tint="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/notificationsButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bottomAppBar"
         app:srcCompat="@drawable/ic_home_black_24dp" />
 
     <ImageButton
         android:id="@+id/destacadosButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="2dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/boton_circulo"
-        android:backgroundTint="#F7F161"
+        android:backgroundTint="@android:color/holo_orange_light"
+        android:clickable="true"
         android:foregroundTint="#CA2F2F"
         android:scaleType="centerInside"
         android:tint="@color/common_google_signin_btn_text_dark_default"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/homeButton"
+        app:layout_constraintStart_toEndOf="@+id/miTiendaButton"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
         app:srcCompat="@drawable/ic_whatshot_black_24dp" />
 
     <ImageButton
         android:id="@+id/miTiendaButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="2dp"
+        android:layout_marginStart="16dp"
         android:background="@drawable/boton_circulo"
-        android:backgroundTint="#F7F161"
+        android:backgroundTint="@android:color/holo_orange_light"
         android:foregroundTint="#CA2F2F"
         android:scaleType="centerInside"
         android:tint="@color/common_google_signin_btn_text_dark_default"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/destacadosButton"
+        app:layout_constraintStart_toStartOf="@+id/bottomAppBar"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
         app:srcCompat="@drawable/ic_store_mall_directory_black_24dp" />
 
     <ImageButton
         android:id="@+id/notificationsButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="2dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/boton_circulo"
-        android:backgroundTint="#F7F161"
+        android:backgroundTint="@android:color/holo_orange_light"
         android:foregroundTint="#CA2F2F"
         android:scaleType="centerInside"
         android:tint="@color/common_google_signin_btn_text_dark_default"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/searchButton"
+        app:layout_constraintStart_toEndOf="@+id/homeButton"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
         app:srcCompat="@drawable/ic_notifications_black_24dp" />
 
     <ImageButton
         android:id="@+id/searchButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="2dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/boton_circulo"
-        android:backgroundTint="#F7F161"
+        android:backgroundTint="@android:color/holo_orange_light"
         android:foregroundTint="#CA2F2F"
         android:scaleType="centerInside"
         android:textAlignment="gravity"
         android:tint="@color/common_google_signin_btn_text_dark_default"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/bottomAppBar"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
         app:srcCompat="@drawable/ic_search_black_24dp" />
 
     <fragment
@@ -104,4 +114,11 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/mobile_navigation" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="66dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -25,7 +25,6 @@
             app:popupTheme="@style/AppTheme2"
             app:title="OwnStore"
             app:titleMargin="2dp"
-            app:titleMarginStart="100dp"
             app:titleTextAppearance="@style/TextAppearance.AppCompat.Large"
             app:titleTextColor="@color/buttons" />
 

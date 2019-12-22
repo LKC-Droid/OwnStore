@@ -3,19 +3,4 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="526dp"
-        android:layout_height="511dp"
-        android:layout_marginTop="16dp"
-        android:label="Inicio"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ejemplo" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    android:layout_height="match_parent"/>

@@ -36,7 +36,10 @@ public class MainActivity extends AppCompatActivity implements
 
 
         // Button listeners
+        SignInButton signInButton = (SignInButton) findViewById(R.id.sign_in_button);
         findViewById(R.id.sign_in_button).setOnClickListener(this);
+
+        signInButton.setSize(SignInButton.SIZE_WIDE);
 
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
