@@ -43,11 +43,16 @@ public class AdapterTiendas extends BaseAdapter {
         TextView TituloTienda = (TextView) vista.findViewById(R.id.textNombreTienda);
         TextView DescripcionTienda = (TextView) vista.findViewById(R.id.textDesc);
         ImageView LogoTienda = (ImageView) vista.findViewById(R.id.imageLogo);
+        ImageView ProductoTienda1 = (ImageView) vista.findViewById(R.id.imageProducto1);
+        ImageView ProductoTienda2 = (ImageView) vista.findViewById(R.id.imageProducto2);
+        ImageView ProductoTienda3 = (ImageView) vista.findViewById(R.id.imageProducto3);
 
         TituloTienda.setText(datos[i][0]);
         DescripcionTienda.setText(datos[i][1]);
         LogoTienda.setImageResource(datosImagen[i]);
-
+        ProductoTienda1.setImageResource(datosImagen[i]);
+        ProductoTienda2.setImageResource(datosImagen[i]);
+        ProductoTienda3.setImageResource(datosImagen[i]);
 
         return vista;
     }

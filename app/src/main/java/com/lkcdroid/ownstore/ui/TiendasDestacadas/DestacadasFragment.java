@@ -21,12 +21,11 @@ public class DestacadasFragment extends Fragment {
 
     private SlideshowViewModel slideshowViewModel;
     ListView lista;
-    Context c;
 
     String[][] datos = {
-            {"Unravel Store", "Tienda de ropa juvenil de verano"},
+            {"Unravel Store", "Tienda de ropa juvenil de verano Tienda de ropa juvenil de veranoTienda de ropa juvenil de veranoTienda de ropa juvenil"},
             {"Go Shopping", "Accesorios, prendas y mas!"},
-            {"TuTienda", "Descripción de la tienda"}
+            {"TuTienda", "12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667"}
     };
 
 

@@ -11,15 +11,36 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".BuscarActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:label="Buscar">
-
+        <activity android:name=".ui.VistaTiendaYProducto.VistaProductoActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
         </activity>
+
+
+        <activity
+            android:name=".ui.VistaTiendaYProducto.VistaTiendaActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name=".BuscarActivity"
+            android:label="Buscar"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+
         <activity android:name=".menuActivity" />
+
+
         <activity
             android:name=".InicioActivity"
-
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,8 +55,11 @@
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
         </activity>
+
+
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <category android:name="android.intent.category.BROWSABLE" />

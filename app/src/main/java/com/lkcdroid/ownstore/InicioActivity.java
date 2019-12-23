@@ -83,6 +83,7 @@ public class InicioActivity extends AppCompatActivity implements NavigationView.
 
         Glide.with(this)
                 .load(acct.getPhotoUrl())
+                .error(Glide.with(this).load(R.drawable.ic_person_black_24dp))
                 .apply(RequestOptions.circleCropTransform())
                 .into(userPhoto);
 
@@ -99,6 +100,11 @@ public class InicioActivity extends AppCompatActivity implements NavigationView.
                     destacadosbutton.setImageTintList(getResources().getColorStateList(R.color.buttons));
                     search.setImageTintList(getResources().getColorStateList(R.color.buttons));
                     notificaciones.setImageTintList(getResources().getColorStateList(R.color.buttons));
+                notificaciones.setEnabled(true);
+                destacadosbutton.setEnabled(true);
+                homeButton.setEnabled(false);
+                myShop.setEnabled(true);
+
             }
         });
 
@@ -111,6 +117,10 @@ public class InicioActivity extends AppCompatActivity implements NavigationView.
                 destacadosbutton.setImageTintList(getResources().getColorStateList(R.color.colorPrimaryDark));
                 search.setImageTintList(getResources().getColorStateList(R.color.buttons));
                 notificaciones.setImageTintList(getResources().getColorStateList(R.color.buttons));
+                notificaciones.setEnabled(true);
+                destacadosbutton.setEnabled(false);
+                homeButton.setEnabled(true);
+                myShop.setEnabled(true);
             }
         });
 
@@ -131,10 +141,15 @@ public class InicioActivity extends AppCompatActivity implements NavigationView.
                             .setCustomAnimations(R.anim.right_slide, R.anim.left_slide)
                             .replace(R.id.nav_host_fragment, new ShareFragment())
                             .commit();
+
                     homeButton.setImageTintList(getResources().getColorStateList(R.color.buttons));
                     destacadosbutton.setImageTintList(getResources().getColorStateList(R.color.buttons));
                     search.setImageTintList(getResources().getColorStateList(R.color.buttons));
                     notificaciones.setImageTintList(getResources().getColorStateList(R.color.colorPrimaryDark));
+                    notificaciones.setEnabled(false);
+                    destacadosbutton.setEnabled(true);
+                    homeButton.setEnabled(true);
+                    myShop.setEnabled(true);
 
             }
         });
