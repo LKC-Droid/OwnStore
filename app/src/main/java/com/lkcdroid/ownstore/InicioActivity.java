@@ -28,6 +28,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.lkcdroid.ownstore.ui.Tiendas.TiendasFragment;
 import com.lkcdroid.ownstore.ui.TiendasDestacadas.DestacadasFragment;
 import com.lkcdroid.ownstore.ui.Notificaciones.ShareFragment;
+import com.lkcdroid.ownstore.ui.VistasCRUD.MyShopActivity;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -154,6 +155,13 @@ public class InicioActivity extends AppCompatActivity implements NavigationView.
             }
         });
 
+        myShop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goMyShop();
+            }
+        });
+
 
 
 
@@ -205,6 +213,12 @@ public class InicioActivity extends AppCompatActivity implements NavigationView.
 
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
+
+    private void goMyShop() {
+
+        Intent intent = new Intent(this, MyShopActivity.class);
         startActivity(intent);
     }
 

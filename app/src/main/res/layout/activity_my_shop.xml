@@ -7,10 +7,187 @@
     android:background="#FAE69F"
     tools:context=".ui.VistasCRUD.MyShopActivity">
 
+    <ScrollView
+        android:id="@+id/InsertarTienda"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/imageButton5"
+                    android:layout_width="169dp"
+                    android:layout_height="151dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#00FFFFFF"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView14"
+                    app:srcCompat="@drawable/ic_add_circle_outline_black_24dp" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="381dp"
+                    android:layout_height="37dp"
+                    android:text="*Para poder crear tu tienda debes ingresar todos los datos a continuación"
+                    android:textColor="#FF0000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+                <EditText
+                    android:id="@+id/editText5"
+                    android:layout_width="284dp"
+                    android:layout_height="48dp"
+                    android:backgroundTint="#B5D81010"
+                    android:backgroundTintMode="add"
+                    android:ems="10"
+                    android:foreground="@drawable/rectangle_drawable"
+                    android:foregroundTint="#32FF6D00"
+                    android:inputType="textPostalAddress"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+                <EditText
+                    android:id="@+id/editText2"
+                    android:layout_width="279dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="#B5D81010"
+                    android:backgroundTintMode="add"
+                    android:ems="10"
+                    android:foreground="@drawable/rectangle_drawable"
+                    android:foregroundTint="#32FF6D00"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:fontFamily="@font/lato_black"
+                    android:text="Descripción"
+                    android:textColor="#FF6D00"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/lato_black"
+                    android:text="Titulo"
+                    android:textColor="#FF6D00"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageButton5" />
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:fontFamily="@font/lato_black"
+                    android:text="Logo de tu tienda"
+                    android:textColor="#FF6D00"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/lato_black"
+                    android:text="Dirección"
+                    android:textColor="#FF6D00"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editText4" />
+
+                <EditText
+                    android:id="@+id/editText4"
+                    android:layout_width="277dp"
+                    android:layout_height="163dp"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="#B5D81010"
+                    android:ems="10"
+                    android:foreground="@drawable/rectangle_drawable"
+                    android:foregroundTint="#32FF6D00"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="167dp"
+                    android:layout_height="51dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="32dp"
+                    android:background="#FF6D00"
+                    android:fontFamily="@font/lato_black"
+                    android:text="Crear Tienda"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editText5" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="320dp"
+                    android:layout_height="73dp"
+                    android:layout_marginTop="32dp"
+                    android:fontFamily="@font/lato"
+                    android:text="Con OwnStore puedes crear tu propia tienda online, Muestra tus productos, Envia ofertas y mucho mas!"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.404"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="0dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
     <TextView
         android:id="@+id/textView11"
         android:layout_width="0dp"
-        android:layout_height="57dp"
+        android:layout_height="55dp"
         android:background="@color/colorPrimary"
         android:fontFamily="@font/lato_black"
         android:text="Crear mi Tienda"
@@ -18,159 +195,7 @@
         android:textColor="#FFFFFF"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="320dp"
-        android:layout_height="73dp"
-        android:layout_marginTop="12dp"
-        android:fontFamily="@font/lato"
-        android:text="Con OwnStore puedes crear tu propia tienda online, Muestra tus productos, Envia ofertas y mucho mas!"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="381dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="8dp"
-        android:text="*Para poder crear tu tienda debes ingresar todos los datos a continuación"
-        android:textColor="#FF0000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/lato_black"
-        android:text="Logo de tu tienda"
-        android:textColor="#FF6D00"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/lato_black"
-        android:text="Titulo"
-        android:textColor="#FF6D00"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton5" />
-
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/lato_black"
-        android:text="Descripción"
-        android:textColor="#FF6D00"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/lato_black"
-        android:text="Dirección"
-        android:textColor="#FF6D00"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
-
-    <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="169dp"
-        android:layout_height="151dp"
-        android:layout_marginTop="8dp"
-        android:background="#00FFFFFF"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14"
-        app:srcCompat="@drawable/ic_add_circle_outline_black_24dp" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="279dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="#B5D81010"
-        android:backgroundTintMode="add"
-        android:ems="10"
-        android:foreground="@drawable/rectangle_drawable"
-        android:foregroundTint="#32FF6D00"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
-
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="277dp"
-        android:layout_height="163dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="#B5D81010"
-        android:ems="10"
-        android:foreground="@drawable/rectangle_drawable"
-        android:foregroundTint="#32FF6D00"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
-
-    <EditText
-        android:id="@+id/editText5"
-        android:layout_width="284dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="#B5D81010"
-        android:backgroundTintMode="add"
-        android:ems="10"
-        android:foreground="@drawable/rectangle_drawable"
-        android:foregroundTint="#32FF6D00"
-        android:inputType="textPostalAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="167dp"
-        android:layout_height="51dp"
-        android:background="#FF6D00"
-        android:fontFamily="@font/lato_black"
-        android:text="Crear Tienda"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5"
-        app:layout_constraintVertical_bias="0.217" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

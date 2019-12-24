@@ -13,7 +13,13 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".ui.VistasCRUD.MyShopActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+
+        </activity>
+
         <activity
             android:name=".ui.VistaTiendaYProducto.VistaProductoActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
