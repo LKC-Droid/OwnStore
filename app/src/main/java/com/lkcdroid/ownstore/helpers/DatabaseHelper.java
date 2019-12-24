@@ -21,8 +21,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // no la tenga creada.
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE tienda(id_tienda INTEGER PRIMARY KEY AUTOINCREMENT, nombre_tienda TEXT, descripcion_tienda TEXT, imagen_tienda text);");
-        db.execSQL("CREATE TABLE producto(id_producto INTEGER PRIMARY KEY AUTOINCREMENT, nombre_producto TEXT, descripcion_producto TEXT, imagen_producto text);");
+        db.execSQL("CREATE TABLE tienda(id_tienda INTEGER PRIMARY KEY AUTOINCREMENT, nombre_tienda TEXT, descripcion_tienda TEXT,imagen_tienda text);");
+        db.execSQL("CREATE TABLE producto(id_producto INTEGER PRIMARY KEY AUTOINCREMENT, nombre_producto TEXT, descripcion_producto TEXT);");
+        db.execSQL("CREATE TABLE tienda(id_imagen INTEGER PRIMARY KEY AUTOINCREMENT, recurso_imagen TEXT);");
     }
 
     @Override

@@ -30,11 +30,10 @@ public class ProductoDAL {
         return this.tryInsert();
     }
 
-    public boolean insertar(String nombre, String descripcion, String imagen)
+    public boolean insertar(String nombre, String descripcion)
     {
         this.producto.setNombre(nombre);
         this.producto.setDescripcion(descripcion);
-        this.producto.setImagen(imagen);
 
         return this.tryInsert();
     }
@@ -51,9 +50,8 @@ public class ProductoDAL {
                 int id = consulta.getInt(0);
                 String nombre = consulta.getString(1);
                 String descripcion = consulta.getString(2);
-                String imagen = consulta.getString(3);
 
-                Producto producto = new Producto(id,nombre,descripcion,imagen);
+                Producto producto = new Producto(id,nombre,descripcion);
                 lista.add(producto);
 
             } while(consulta.moveToNext());
@@ -68,9 +66,8 @@ public class ProductoDAL {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         ContentValues c = new ContentValues(); // Objeto tipo clave-valor
-        c.put("nombre", producto.getNombre());
-        c.put("categoria", producto.getDescripcion());
-        c.put("capitulos", producto.getImagen());
+        c.put("nombre_producto", producto.getNombre());
+        c.put("descripcion_producto", producto.getDescripcion());
         try {
             int filasAfectadas;
             filasAfectadas = db.update(
@@ -93,9 +90,8 @@ public class ProductoDAL {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         ContentValues c = new ContentValues(); // Objeto tipo clave-valor
-        c.put("nombre", producto.getNombre());
-        c.put("categoria", producto.getDescripcion());
-        c.put("capitulos", producto.getImagen());
+        c.put("nombre_producto", producto.getNombre());
+        c.put("descripcion_producto", producto.getDescripcion());
         try {
             int filasAfectadas;
             filasAfectadas = db.update(
@@ -137,7 +133,6 @@ public class ProductoDAL {
         ContentValues c = new ContentValues();
         c.put("nombre_producto", this.producto.getNombre());
         c.put("descripcion_producto", this.producto.getDescripcion());
-        c.put("imagen_producto", this.producto.getImagen());
 
         try {
             db.insert("producto", null, c);

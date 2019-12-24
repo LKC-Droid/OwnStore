@@ -5,43 +5,41 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.lkcdroid.ownstore.dto.Tienda;
+import com.lkcdroid.ownstore.dto.Imagen;
 import com.lkcdroid.ownstore.helpers.DatabaseHelper;
 
 import java.util.ArrayList;
 
-public class TiendaDAL {
+public class ImagenDAL {
     private DatabaseHelper dbHelper;
-    private Tienda tienda;
+    private Imagen imagen;
 
-    public TiendaDAL(Context context) {
+    public ImagenDAL(Context context) {
         this.dbHelper = new DatabaseHelper(context);
-        this.tienda = new Tienda();
+        this.imagen = new Imagen();
         // Testing
         SQLiteDatabase db = dbHelper.getWritableDatabase();
     }
 
-    public TiendaDAL(Context context, Tienda tienda) {
+    public ImagenDAL(Context context, Imagen imagen) {
         this.dbHelper = new DatabaseHelper(context);
-        this.tienda = tienda;
+        this.imagen = imagen;
     }
 
     public boolean insertar() {
         return this.tryInsert();
     }
 
-    public boolean insertar(String nombre, String descripcion, String imagen)
+    public boolean insertar(String recurso)
     {
-        this.tienda.setNombre(nombre);
-        this.tienda.setDescripcion(descripcion);
-        this.tienda.setImagen(imagen);
+        this.imagen.setRecurso(recurso);
 
         return this.tryInsert();
     }
 
-    public ArrayList<Tienda> seleccionar()
+    public ArrayList<Imagen> seleccionar()
     {
-        ArrayList<Tienda> lista = new ArrayList<>();
+        ArrayList<Imagen> lista = new ArrayList<>();
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
         Cursor consulta = db.rawQuery("SELECT * FROM tienda", null);
@@ -49,12 +47,11 @@ public class TiendaDAL {
         if(consulta.moveToFirst()) {
             do {
                 int id = consulta.getInt(0);
-                String nombre = consulta.getString(1);
-                String descripcion = consulta.getString(2);
-                String imagen = consulta.getString(3);
+                String recurso = consulta.getString(1);
 
-                Tienda tienda = new Tienda(id,nombre,descripcion,imagen);
-                lista.add(tienda);
+
+                Imagen imagen = new Imagen(id,recurso);
+                lista.add(imagen);
 
             } while(consulta.moveToNext());
 
@@ -63,20 +60,18 @@ public class TiendaDAL {
         return lista;
     }
 
-    public boolean actualizar(int id, Tienda tienda)
+    public boolean actualizar(int id, Imagen imagen)
     {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         ContentValues c = new ContentValues(); // Objeto tipo clave-valor
-        c.put("nombre_tienda", tienda.getNombre());
-        c.put("descripcion_tienda", tienda.getDescripcion());
-        c.put("imagen_tienda", tienda.getImagen());
+        c.put("recurso_imagen", imagen.getRecurso());
         try {
             int filasAfectadas;
             filasAfectadas = db.update(
-                    "tienda",
+                    "imagen",
                     c,
-                    "id_tienda = ?",
+                    "id_imagen = ?",
                     new String[] { String.valueOf(id) }
             );
             // if(filasAfectadas > 0) return true; else return false;
@@ -88,21 +83,19 @@ public class TiendaDAL {
         return false;
     }
 
-    public boolean actualizar(Tienda tienda)
+    public boolean actualizar(Imagen imagen)
     {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         ContentValues c = new ContentValues(); // Objeto tipo clave-valor
-        c.put("nombre_tienda", tienda.getNombre());
-        c.put("descripcion_tienda", tienda.getDescripcion());
-        c.put("imagen_tienda", tienda.getImagen());
+        c.put("recurso_imagen", imagen.getRecurso());
         try {
             int filasAfectadas;
             filasAfectadas = db.update(
-                    "tienda",
+                    "imagen",
                     c,
-                    "id_tienda = ?",
-                    new String[] { String.valueOf(tienda.getId()) }
+                    "id_imagen = ?",
+                    new String[] { String.valueOf(imagen.getId_imagen()) }
             );
             // if(filasAfectadas > 0) return true; else return false;
             return (filasAfectadas > 0);
@@ -135,9 +128,7 @@ public class TiendaDAL {
 
 
         ContentValues c = new ContentValues();
-        c.put("nombre_tienda", this.tienda.getNombre());
-        c.put("descripcion_tienda", this.tienda.getDescripcion());
-        c.put("imagen_tienda", this.tienda.getImagen());
+        c.put("recurso_imagen", this.imagen.getRecurso());
 
         try {
             db.insert("tienda", null, c);

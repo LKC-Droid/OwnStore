@@ -4,19 +4,16 @@ public class Producto {
     private int id;
     private String nombre;
     private String descripcion;
-    private String imagen;
 
-    public Producto(int id, String nombre, String descripcion, String imagen) {
+    public Producto(int id, String nombre, String descripcion) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.imagen = imagen;
     }
 
-    public Producto(String nombre, String descripcion, String imagen) {
+    public Producto(String nombre, String descripcion) {
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.imagen = imagen;
     }
 
     public Producto() {
@@ -46,13 +43,6 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
-    public String getImagen() {
-        return imagen;
-    }
-
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
-    }
 
     @Override
     public String toString() {
@@ -60,7 +50,6 @@ public class Producto {
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
-                ", imagen='" + imagen + '\'' +
                 '}';
     }
 }
