@@ -26,7 +26,7 @@
                 android:layout_height="match_parent">
 
                 <ImageButton
-                    android:id="@+id/imageButton5"
+                    android:id="@+id/imBtnLogo"
                     android:layout_width="169dp"
                     android:layout_height="151dp"
                     android:layout_marginTop="16dp"
@@ -48,7 +48,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
                 <EditText
-                    android:id="@+id/editText5"
+                    android:id="@+id/txtDireccion"
                     android:layout_width="284dp"
                     android:layout_height="48dp"
                     android:backgroundTint="#B5D81010"
@@ -62,7 +62,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
                 <EditText
-                    android:id="@+id/editText2"
+                    android:id="@+id/txtNombre"
                     android:layout_width="279dp"
                     android:layout_height="48dp"
                     android:layout_marginTop="16dp"
@@ -87,7 +87,7 @@
                     android:textSize="24sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText2" />
+                    app:layout_constraintTop_toBottomOf="@+id/txtNombre" />
 
                 <TextView
                     android:id="@+id/textView15"
@@ -100,7 +100,7 @@
                     android:textSize="24sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageButton5" />
+                    app:layout_constraintTop_toBottomOf="@+id/imBtnLogo" />
 
                 <TextView
                     android:id="@+id/textView14"
@@ -126,10 +126,10 @@
                     android:textSize="24sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText4" />
+                    app:layout_constraintTop_toBottomOf="@+id/txtDecripcion" />
 
                 <EditText
-                    android:id="@+id/editText4"
+                    android:id="@+id/txtDecripcion"
                     android:layout_width="277dp"
                     android:layout_height="163dp"
                     android:layout_marginTop="16dp"
@@ -144,7 +144,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/btnCrear"
                     android:layout_width="167dp"
                     android:layout_height="51dp"
                     android:layout_marginTop="32dp"
@@ -157,7 +157,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText5" />
+                    app:layout_constraintTop_toBottomOf="@+id/txtDireccion" />
 
                 <TextView
                     android:id="@+id/textView12"
