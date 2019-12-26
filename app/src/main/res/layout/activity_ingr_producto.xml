@@ -6,4 +6,118 @@
     android:layout_height="match_parent"
     tools:context=".ui.VistasCRUD.IngrProductoActivity">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="436dp"
+        android:layout_height="762dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="-2dp">
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="303dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="32dp"
+            android:text="Ingresar Producto"
+            android:textColor="#F34E24"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/imBtnImagen"
+            android:layout_width="169dp"
+            android:layout_height="151dp"
+            android:layout_marginTop="32dp"
+            android:background="#00FFFFFF"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView20"
+            app:srcCompat="@drawable/ic_add_circle_outline_black_24dp" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="208dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/lato_black"
+            android:text="Logo de tu tienda"
+            android:textColor="#FF6D00"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.538"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="90dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/lato_black"
+            android:text="Titulo"
+            android:textColor="#FF6D00"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.528"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imBtnImagen" />
+
+        <EditText
+            android:id="@+id/txtNombre"
+            android:layout_width="279dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="#B5D81010"
+            android:backgroundTintMode="add"
+            android:ems="10"
+            android:foreground="@drawable/rectangle_drawable"
+            android:foregroundTint="#32FF6D00"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.564"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/lato_black"
+            android:text="Descripción"
+            android:textColor="#FF6D00"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtNombre" />
+
+        <EditText
+            android:id="@+id/txtDecripcion"
+            android:layout_width="277dp"
+            android:layout_height="163dp"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="#B5D81010"
+            android:ems="10"
+            android:foreground="@drawable/rectangle_drawable"
+            android:foregroundTint="#32FF6D00"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="0dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
