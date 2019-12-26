@@ -20,6 +20,12 @@ private String direccion;
         this.direccion = direccion;
     }
 
+    public Tienda(String nombre, String descripcion, String direccion) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.direccion = direccion;
+    }
+
     public Tienda(String nombre, String descripcion, String imagen, String direccion) {
         this.nombre = nombre;
         this.descripcion = descripcion;
