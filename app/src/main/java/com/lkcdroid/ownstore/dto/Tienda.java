@@ -5,21 +5,26 @@ private int id;
 private String nombre;
 private String descripcion;
 private String imagen;
+private String direccion;
 
-    public Tienda(int id, String nombre, String descripcion, String imagen) {
-        this.id = id;
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.imagen = imagen;
-    }
 
     public Tienda() {
     }
 
-    public Tienda(String nombre, String descripcion, String imagen) {
+
+    public Tienda(int id, String nombre, String descripcion, String imagen, String direccion) {
+        this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.imagen = imagen;
+        this.direccion = direccion;
+    }
+
+    public Tienda(String nombre, String descripcion, String imagen, String direccion) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.imagen = imagen;
+        this.direccion = direccion;
     }
 
     public int getId() {
@@ -54,6 +59,14 @@ private String imagen;
         this.imagen = imagen;
     }
 
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
     @Override
     public String toString() {
         return "Tienda{" +
@@ -61,6 +74,7 @@ private String imagen;
                 ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", imagen='" + imagen + '\'' +
+                ", direccion='" + direccion + '\'' +
                 '}';
     }
 }

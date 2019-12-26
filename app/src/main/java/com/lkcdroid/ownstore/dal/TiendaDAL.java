@@ -52,8 +52,9 @@ public class TiendaDAL {
                 String nombre = consulta.getString(1);
                 String descripcion = consulta.getString(2);
                 String imagen = consulta.getString(3);
+                String direccion=consulta.getString(4);
 
-                Tienda tienda = new Tienda(id,nombre,descripcion,imagen);
+                Tienda tienda = new Tienda(id,nombre,descripcion,imagen,direccion);
                 lista.add(tienda);
 
             } while(consulta.moveToNext());
@@ -71,6 +72,7 @@ public class TiendaDAL {
         c.put("nombre_tienda", tienda.getNombre());
         c.put("descripcion_tienda", tienda.getDescripcion());
         c.put("imagen_tienda", tienda.getImagen());
+        c.put("direccion_tienda",tienda.getDireccion());
         try {
             int filasAfectadas;
             filasAfectadas = db.update(
@@ -96,6 +98,7 @@ public class TiendaDAL {
         c.put("nombre_tienda", tienda.getNombre());
         c.put("descripcion_tienda", tienda.getDescripcion());
         c.put("imagen_tienda", tienda.getImagen());
+        c.put("direccion_tienda",tienda.getDireccion());
         try {
             int filasAfectadas;
             filasAfectadas = db.update(
@@ -138,6 +141,7 @@ public class TiendaDAL {
         c.put("nombre_tienda", this.tienda.getNombre());
         c.put("descripcion_tienda", this.tienda.getDescripcion());
         c.put("imagen_tienda", this.tienda.getImagen());
+        c.put("direccion_tienda",tienda.getDireccion());
 
         try {
             db.insert("tienda", null, c);
