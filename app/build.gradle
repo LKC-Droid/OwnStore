@@ -39,5 +39,7 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.7.1'
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
     implementation "com.google.firebase:firebase-storage:18.0.0"
+    implementation "com.google.firebase:firebase-ads:18.0.0"
+    implementation "com.google.firebase:firebase-database:18.0.0"
 }
 apply plugin: 'com.google.gms.google-services'
